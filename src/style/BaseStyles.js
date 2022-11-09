@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export default createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 *,
 *::before,
 *::after {
@@ -19,3 +19,5 @@ a {
   text-decoration: none;
 }
  `;
+
+export default GlobalStyle;

@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 /** DO NOT ALTER THIS FILE. It is a copy of https://necolas.github.io/normalize.css/ */
 
-export default createGlobalStyle`
+const Normalize = createGlobalStyle`
   html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -150,3 +150,5 @@ export default createGlobalStyle`
     display: none;
   }
 `;
+
+export default Normalize;

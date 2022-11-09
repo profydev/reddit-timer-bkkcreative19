@@ -1,15 +1,32 @@
+// import React from 'react';
+// import {
+//   Route, createBrowserRouter, createRoutesFromElements,
+// } from 'react-router-dom';
+// import Home from '../pages/home';
+// import Search from '../pages/search';
+// import Layout from '../shared/components/Layout/Layout';
+
+// const Router = createBrowserRouter(createRoutesFromElements(
+
+//   <Route path="/" element={<Layout />}>
+//     <Route index element={<Home />} />
+//     <Route path="/search/:name" element={<Search />} />
+//   </Route>,
+
+// ));
+
+// export default Router;
+
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from '../Home';
-import Search from '../Search';
+import { Routes, Route } from 'react-router-dom';
+import Home from '../pages/home';
+import Search from '../pages/search';
 
 const RouteHandler = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/search" element={<Search />} />
-    </Routes>
-  </Router>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/search/:name" element={<Search />} />
+  </Routes>
 );
 
 export default RouteHandler;

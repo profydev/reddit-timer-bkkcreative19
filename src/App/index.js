@@ -1,13 +1,13 @@
 import React from 'react';
+
+// import { RouterProvider } from 'react-router-dom';
+import Layout from '../shared/components/Layout/Layout';
 import RouteHandler from './Routes';
-import BaseStyles from './BaseStyles';
-import NormalizeStyles from './NormalizeStyles';
 
 function App() {
   return (
     <>
-      <NormalizeStyles />
-      <BaseStyles />
+      <Layout />
       <RouteHandler />
     </>
   );
