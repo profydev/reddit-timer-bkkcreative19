@@ -1,41 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import { Link } from 'react-router-dom';
-import { ReactComponent } from './logo.svg';
-
-const HeaderStyles = styled.header`
-  display: flex;
-  padding: 3.2em 8em;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const NavList = styled.nav`
-  display: flex;
-  gap: 2.5em;
-`;
-const NavListItem = styled(Link)`
-  display: flex;
-  font-weight: 400;
-  font-size: 1.6rem;
-  color: #636363;
-  cursor: pointer
-`;
-
-const Logo = styled(ReactComponent)``;
+import * as S from './Header.style';
 
 function Header() {
   return (
-    <HeaderStyles as="header">
+    <S.Container>
       <Link to="/">
-        <Logo />
+        <S.Logo />
       </Link>
-      <NavList>
-        <NavListItem to="/search/javascript">Search</NavListItem>
-        <NavListItem to="#how-it-works">How it works</NavListItem>
-        <NavListItem to="#about">About</NavListItem>
-      </NavList>
-    </HeaderStyles>
+      <nav>
+        <S.Link to="/search/javascript">Search</S.Link>
+        <S.Link to="#how-it-works">How it works</S.Link>
+        <S.Link to="#about">About</S.Link>
+      </nav>
+    </S.Container>
   );
 }
 

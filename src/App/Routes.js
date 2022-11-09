@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../Home';
-import Search from '../Search';
+import Home from '../pages/home';
+import Search from '../pages/search';
 
 const RouteHandler = () => (
   <Routes>
