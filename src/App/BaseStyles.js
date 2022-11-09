@@ -12,8 +12,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  background: ${({ theme }) => theme.mainBG};
+  font-family: 'Montserrat', sans-serif;
   height: 100vh;
 }
 a {
