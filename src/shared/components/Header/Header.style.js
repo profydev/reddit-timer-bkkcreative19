@@ -15,7 +15,7 @@ export const Container = styled.header`
 export const Link = styled(UnstyledLink)`
   margin-left: 26px;
   text-decoration: none;
-  color: ${(props) => props.theme.color.midDark};
+
   font-size: 1.6rem;
 `;
 
