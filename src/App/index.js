@@ -1,11 +1,8 @@
 import React from 'react';
+import RouteHandler from './Routes';
 
 function App() {
-  return (
-    <div>
-      App Placeholder
-    </div>
-  );
+  return <RouteHandler />;
 }
 
 export default App;
