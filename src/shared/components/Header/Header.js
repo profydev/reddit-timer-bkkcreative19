@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Logo from '../../../assests/logo.svg';
+import { ReactComponent } from './logo.svg';
 
 const HeaderStyles = styled.header`
   display: flex;
@@ -10,11 +10,11 @@ const HeaderStyles = styled.header`
   justify-content: space-between;
 `;
 
-const NavList = styled.ul`
+const NavList = styled.nav`
   display: flex;
   gap: 2.5em;
 `;
-const NavListItem = styled.li`
+const NavListItem = styled(Link)`
   display: flex;
   font-weight: 400;
   font-size: 1.6rem;
@@ -22,16 +22,18 @@ const NavListItem = styled.li`
   cursor: pointer
 `;
 
+const Logo = styled(ReactComponent)``;
+
 function Header() {
   return (
-    <HeaderStyles>
+    <HeaderStyles as="header">
       <Link to="/">
-        <img src={Logo} alt="logo" />
+        <Logo />
       </Link>
       <NavList>
-        <NavListItem><Link to="/search/javascript">Search</Link></NavListItem>
-        <NavListItem><Link to="#how-it-works">How it works</Link></NavListItem>
-        <NavListItem><Link to="#about">About</Link></NavListItem>
+        <NavListItem to="/search/javascript">Search</NavListItem>
+        <NavListItem to="#how-it-works">How it works</NavListItem>
+        <NavListItem to="#about">About</NavListItem>
       </NavList>
     </HeaderStyles>
   );
