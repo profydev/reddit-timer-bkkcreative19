@@ -34,3 +34,7 @@ export const SubReddit = styled.span`
   font-weight: 500;
   margin-top: 5.95rem;
 `;
+
+export const HeatMap = styled.img`
+  margin-top: 3.6rem;
+`;
