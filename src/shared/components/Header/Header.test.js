@@ -61,9 +61,8 @@ test.each`
     const hashLink = screen.getByRole('link', { name: link });
     userEvent.click(hashLink);
 
-    expect(
-      screen.getByText(/No reactions to your reddit posts/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/We find the 500/i)).toBeInTheDocument();
+
     expect(router.state.location.hash).toEqual(hash);
   }
 );
