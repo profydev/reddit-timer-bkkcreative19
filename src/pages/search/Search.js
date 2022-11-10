@@ -1,7 +1,10 @@
 import React from 'react';
+import * as S from './Search.style';
 
 const Search = () => (
-  <div>search page</div>
+  <S.Container>
+    <S.Title>Find the best time for a subreddit</S.Title>
+  </S.Container>
 );
 
 export default Search;
