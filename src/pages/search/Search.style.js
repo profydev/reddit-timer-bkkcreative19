@@ -25,6 +25,7 @@ export const Input = styled.input`
   border: 1px solid #e6e6e6;
   outline: none;
   margin: 0 1rem;
+  padding: 0 1em;
 `;
 
 export const Button = styled(BaseButton)`
