@@ -4,6 +4,7 @@ import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 
 import userEvent from '@testing-library/user-event';
+
 import App from '../../../App';
 
 const setup = (initialPath = '/') => {
@@ -37,7 +38,8 @@ test('navigates to terms page when terms and prviacy link is clicked', () => {
 test('to have to correct href tag', () => {
   setup('/');
 
-  const termsLink = screen.getAllByRole('link', { name: /profy.dev/i });
+  const termsLink = screen.getByTestId('footer-link');
+  // const termsLink = screen.getByRole('link', { name: /profy.dev/i });
 
   expect(termsLink).toHaveAttribute('href', 'https://profy.dev/employers');
 });

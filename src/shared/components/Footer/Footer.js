@@ -4,7 +4,13 @@ import * as S from './Footer.style';
 
 const Footer = () => (
   <S.Container>
-    <S.ExternalLink href="https://profy.dev/employers" target="_blank">profy.dev</S.ExternalLink>
+    <S.ExternalLink
+      data-testid="footer-link"
+      href="https://profy.dev/employers"
+      target="_blank"
+    >
+      profy.dev
+    </S.ExternalLink>
     <Link to="/">
       <S.Logo />
     </Link>
