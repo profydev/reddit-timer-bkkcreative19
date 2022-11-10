@@ -13,7 +13,7 @@ html {
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  height: 100vh;
+
 }
 a {
   text-decoration: none;
