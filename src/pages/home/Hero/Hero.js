@@ -7,7 +7,6 @@ import * as S from './Hero.style';
 import Image from './heat-map.png';
 
 import { defaultSubReddit } from '../../../shared/constants';
-=======
 
 
 const Hero = () => (
