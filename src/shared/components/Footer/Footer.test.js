@@ -37,7 +37,7 @@ test('navigates to terms page when terms and prviacy link is clicked', () => {
 test('to have to correct href tag', () => {
   setup('/');
 
-  const termsLink = screen.getByRole('link', { name: /profy.dev/i });
+  const termsLink = screen.getAllByRole('link', { name: /profy.dev/i });
 
   expect(termsLink).toHaveAttribute('href', 'https://profy.dev/employers');
 });
