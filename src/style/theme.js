@@ -8,8 +8,6 @@ const theme = {
     orange: '#FDB755',
     white: '#ffffff',
     blue: '#0087FF',
-
-
   },
   size: {
     headerHeight: '100px',
