@@ -1,9 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import Footer from '../shared/components/Footer';
-import Header from '../shared/components/Header';
+import Footer from '../shared/components/footer';
+import Header from '../shared/components/header';
 import RouteHandler from './Routes';
 import { theme, Normalize, GlobalStyle } from '../style';
+import * as S from './App.style';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Normalize />
       <GlobalStyle />
       <Header />
-      <RouteHandler />
+      <S.ContentContainer><RouteHandler /></S.ContentContainer>
+
       <Footer />
     </ThemeProvider>
   );
