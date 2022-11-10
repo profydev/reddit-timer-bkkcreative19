@@ -37,6 +37,5 @@ export const SubReddit = styled.span`
 
 export const HeatMap = styled.img`
   margin-top: 3.6rem;
-
   max-width: 100%;
 `;

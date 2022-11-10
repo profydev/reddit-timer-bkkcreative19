@@ -22,8 +22,6 @@ const theme = {
       default: '1.6rem',
       small: '1.4rem',
       medium: '2.4rem',
-
-
       big: '3.8rem',
     },
     lineHeight: {
