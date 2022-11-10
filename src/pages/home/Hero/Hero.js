@@ -7,6 +7,8 @@ const Hero = () => (
     <S.SubTitle>
       Great timing, great results! Find the best time to post on your subreddit.
     </S.SubTitle>
+    <S.Button>Show me the best time</S.Button>
+    <S.SubReddit>r/javascript</S.SubReddit>
   </S.Container>
 );
 

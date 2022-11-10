@@ -5,6 +5,8 @@ const theme = {
     midDark: '#636363',
     midLight: '#d5d5d5',
     light: '#ffffff',
+    orange: '#FDB755',
+    white: '#ffffff',
   },
   size: {
     headerHeight: '100px',
