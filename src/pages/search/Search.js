@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import * as S from './Search.style';
 
 const Search = () => {
   const params = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [value, setValue] = useState(params.name);
-
-  const handleSubmit = () => {
-    navigate(`/search/${value}`);
-  };
 
   return (
     <S.Container>
       <S.Title>Find the best time for a subreddit</S.Title>
-      <S.Form onSubmit={handleSubmit}>
+      <S.Form>
         <span>r /</span>
         <S.Input value={value} onChange={(e) => setValue(e.target.value)} />
-        <S.Button>Search</S.Button>
+        <Link to={`/search/${value}`}>
+          <S.Button>Search</S.Button>
+        </Link>
       </S.Form>
     </S.Container>
   );
