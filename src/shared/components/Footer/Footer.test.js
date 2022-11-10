@@ -1,8 +1,6 @@
 import React from 'react';
 
-import {
-  createMemoryRouter, RouterProvider,
-} from 'react-router-dom';
+import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 
 import userEvent from '@testing-library/user-event';
@@ -50,5 +48,8 @@ test('navigates to home page when logo is clicked', () => {
   const logoLink = screen.getByRole('link', { name: /sign\.svg/i });
   userEvent.click(logoLink);
 
-  expect(screen.getByText(/home page/i)).toBeInTheDocument();
+  expect(
+    // eslint-disable-next-line comma-dangle
+    screen.getByText(/No reactions to your reddit posts?/i)
+  ).toBeInTheDocument();
 });

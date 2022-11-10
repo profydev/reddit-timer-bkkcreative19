@@ -1,8 +1,7 @@
+/* eslint-disable comma-dangle */
 import React from 'react';
 
-import {
-  createMemoryRouter, RouterProvider,
-} from 'react-router-dom';
+import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 
 import userEvent from '@testing-library/user-event';
@@ -34,7 +33,10 @@ test('navigates to home page when logo is clicked', () => {
   const logoLink = screen.getByRole('link', { name: /logo\.svg/i });
   userEvent.click(logoLink);
 
-  expect(screen.getByText(/home page/i)).toBeInTheDocument();
+  expect(
+    // eslint-disable-next-line comma-dangle
+    screen.getByText(/No reactions to your reddit posts/i)
+  ).toBeInTheDocument();
 });
 
 test('navigates to search page when search link is clicked', () => {
@@ -48,15 +50,20 @@ test('navigates to search page when search link is clicked', () => {
 });
 
 test.each`
- link | hash
- ${'About'} | ${'#about'}
- ${'How it works'} | ${'#how-it-works'}
-`('navigates to "$link" section when "$link" link is clicked', ({ link, hash }) => {
-  const { router } = setup('/search/javascript');
+  link              | hash
+  ${'About'}        | ${'#about'}
+  ${'How it works'} | ${'#how-it-works'}
+`(
+  'navigates to "$link" section when "$link" link is clicked',
+  ({ link, hash }) => {
+    const { router } = setup('/search/javascript');
 
-  const hashLink = screen.getByRole('link', { name: link });
-  userEvent.click(hashLink);
+    const hashLink = screen.getByRole('link', { name: link });
+    userEvent.click(hashLink);
 
-  expect(screen.getByText(/home page/i)).toBeInTheDocument();
-  expect(router.state.location.hash).toEqual(hash);
-});
+    expect(
+      screen.getByText(/No reactions to your reddit posts/i)
+    ).toBeInTheDocument();
+    expect(router.state.location.hash).toEqual(hash);
+  }
+);
