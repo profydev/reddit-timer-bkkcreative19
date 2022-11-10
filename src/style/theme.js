@@ -16,8 +16,9 @@ const theme = {
       headline: '"Bitter", serif',
     },
     size: {
-      default: '16px',
-      small: '14px',
+      default: '1.6rem',
+      small: '1.4rem',
+      big: '3.8rem',
     },
     lineHeight: {
       default: 1.69,
