@@ -11,7 +11,6 @@ const Search = () => {
 
   useEffect(() => {
     if (params.name === defaultSubReddit) {
-      console.log('hi');
       setValue(defaultSubReddit);
     }
   }, [params]);
