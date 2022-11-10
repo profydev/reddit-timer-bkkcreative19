@@ -3,7 +3,7 @@ import { Link as UnstyledLink } from 'react-router-dom';
 import { ReactComponent as UnstyledLogo } from './logo.svg';
 
 export const Container = styled.header`
-  width: 100%  ;
+  width: 100%;
   height: 100px;
   margin: 0 auto;
   padding: 0 80px;
@@ -15,7 +15,7 @@ export const Container = styled.header`
 export const Link = styled(UnstyledLink)`
   margin-left: 26px;
   text-decoration: none;
-
+  color: ${(props) => props.theme.color.midDark};
   font-size: 1.6rem;
 `;
 
