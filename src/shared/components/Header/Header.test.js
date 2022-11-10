@@ -62,6 +62,7 @@ test.each`
     userEvent.click(hashLink);
 
     expect(screen.getByText(/We find the 500/i)).toBeInTheDocument();
+
     expect(router.state.location.hash).toEqual(hash);
   }
 );
