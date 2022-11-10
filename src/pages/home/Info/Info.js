@@ -4,7 +4,7 @@ import * as S from './Info.style';
 
 const Info = () => (
   <S.Container>
-    <S.Section>
+    <S.Section id="how-it-works">
       <S.SectionTitle>How it works</S.SectionTitle>
       <ul>
         <S.ListItem>
@@ -20,7 +20,7 @@ const Info = () => (
       </ul>
     </S.Section>
 
-    <S.Section>
+    <S.Section id="about">
       <S.SectionTitle>About</S.SectionTitle>
       <S.Text>
         This app was created during a course on{' '}
