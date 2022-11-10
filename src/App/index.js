@@ -13,8 +13,9 @@ function App() {
       <Normalize />
       <GlobalStyle />
       <Header />
-      <S.ContentContainer><RouteHandler /></S.ContentContainer>
-
+      <S.ContentContainer>
+        <RouteHandler />
+      </S.ContentContainer>
       <Footer />
     </ThemeProvider>
   );
