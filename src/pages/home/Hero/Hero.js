@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import * as S from './Hero.style';
 import Image from './heat-map.png';
 
@@ -8,9 +9,14 @@ const Hero = () => (
     <S.SubTitle>
       Great timing, great results! Find the best time to post on your subreddit.
     </S.SubTitle>
-    <S.Button>Show me the best time</S.Button>
+    <Link to="/search/javascript">
+      <S.Button>Show me the best time</S.Button>
+    </Link>
+
     <S.SubReddit>r/javascript</S.SubReddit>
-    <S.HeatMap src={Image} />
+    <Link to="/search/javascript">
+      <S.HeatMap src={Image} />
+    </Link>
   </S.Container>
 );
 

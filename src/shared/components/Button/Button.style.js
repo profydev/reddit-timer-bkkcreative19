@@ -10,4 +10,5 @@ export const Button = styled.button`
   font-size: ${(props) => props.theme.font.size.small};
   border-radius: 4px;
   width: fit-content;
+  cursor: pointer;
 `;
