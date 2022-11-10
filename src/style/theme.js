@@ -5,6 +5,8 @@ const theme = {
     midDark: '#636363',
     midLight: '#d5d5d5',
     light: '#ffffff',
+    orange: '#FDB755',
+    white: '#ffffff',
   },
   size: {
     headerHeight: '100px',
@@ -16,8 +18,9 @@ const theme = {
       headline: '"Bitter", serif',
     },
     size: {
-      default: '16px',
-      small: '14px',
+      default: '1.6rem',
+      small: '1.4rem',
+      big: '3.8rem',
     },
     lineHeight: {
       default: 1.69,
