@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { defaultSubReddit } from '../../shared/constants';
 import * as S from './Search.style';
 
 const Search = () => {
@@ -7,6 +8,13 @@ const Search = () => {
   // const navigate = useNavigate();
 
   const [value, setValue] = useState(params.name);
+
+  useEffect(() => {
+    if (params.name === defaultSubReddit) {
+      console.log('hi');
+      setValue(defaultSubReddit);
+    }
+  }, [params]);
 
   return (
     <S.Container>
