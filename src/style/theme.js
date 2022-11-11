@@ -7,8 +7,6 @@ const theme = {
     light: '#ffffff',
     orange: '#FDB755',
     white: '#ffffff',
-    blue: '#0087FF',
-
   },
   size: {
     headerHeight: '100px',
@@ -22,7 +20,6 @@ const theme = {
     size: {
       default: '1.6rem',
       small: '1.4rem',
-      medium: '2.4rem',
       big: '3.8rem',
     },
     lineHeight: {
