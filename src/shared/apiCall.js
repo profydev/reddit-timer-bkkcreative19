@@ -3,17 +3,27 @@
 /* eslint-disable import/prefer-default-export */
 
 export const fetchData = async (subReddit) => {
-  const response = [];
+  let i = 0;
+  let after = '';
+  const dataa = [];
 
-  for (let i = 0; i < 5; i++) {
+  do {
+    // console.log(after);
     const res = await fetch(
-      `https://www.reddit.com/r/${subReddit}/top.json?t=year&limit=100&sr_detail=all`,
+      `https://www.reddit.com/r/${subReddit}/top.json?t=year&limit=100&after=${after}`,
     );
     const data = await res.json();
-    response.push(data.data.children);
-  }
+    dataa.push(data.data.children);
+    after = data.data.after;
+    i++;
+  } while (i < 5);
 
-  return response;
+  // const res = await fetch(
+  //   `https://www.reddit.com/r/${subReddit}/top.json?t=year&limit=100`,
+  // );
+  // const data = await res.json();
+
+  return dataa;
 };
 
 // subReddit;
