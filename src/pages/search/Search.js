@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
 import { defaultSubReddit } from '../../shared/constants';
 import { fetchData } from '../../shared/apiCall';
 import * as S from './Search.style';
+import Heatmap from './Heatmap/Heatmap';
 
 const Search = () => {
   const params = useParams();
@@ -19,14 +21,11 @@ const Search = () => {
 
   const [value, setValue] = useState(params.name);
 
-  const { isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['listings', params.name],
     queryFn: () => fetchData(params.name),
     refetchOnWindowFocus: false,
   });
-
-  // console.log(data?.flat());
-  // console.log(new Date());
 
   useEffect(() => {
     if (params.name === defaultSubReddit) {
@@ -47,7 +46,7 @@ const Search = () => {
       {isLoading ? (
         <S.Loader cssOverride={override} color="#FDB755" size="5em" />
       ) : (
-        'hi'
+        <Heatmap data={data} />
       )}
     </S.Container>
   );
