@@ -19,14 +19,14 @@ const Search = () => {
 
   const [value, setValue] = useState(params.name);
 
-  const { data, isLoading } = useQuery({
+  const { isLoading } = useQuery({
     queryKey: ['listings', params.name],
     queryFn: () => fetchData(params.name),
     refetchOnWindowFocus: false,
   });
 
-  console.log(data?.flat());
-  console.log(new Date());
+  // console.log(data?.flat());
+  // console.log(new Date());
 
   useEffect(() => {
     if (params.name === defaultSubReddit) {
