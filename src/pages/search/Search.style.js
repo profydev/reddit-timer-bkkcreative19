@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { Button as BaseButton } from '../../shared/components/Button';
 
 export const Container = styled.div``;
@@ -34,4 +35,8 @@ export const Button = styled(BaseButton)`
   height: 100%;
   display: flex;
   align-items: center;
+`;
+
+export const Loader = styled(ClipLoader)`
+  text-align: center;
 `;

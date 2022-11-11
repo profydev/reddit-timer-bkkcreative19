@@ -1,13 +1,32 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
+
 import { defaultSubReddit } from '../../shared/constants';
+import { fetchData } from '../../shared/apiCall';
 import * as S from './Search.style';
 
 const Search = () => {
   const params = useParams();
   // const navigate = useNavigate();
 
+  const override = {
+    color: '#FDB755',
+    borderWidth: '6px',
+    animationDuration: '1.5s',
+    marginLeft: 'calc(50% - 4em)',
+    marginTop: '5.6rem',
+  };
+
   const [value, setValue] = useState(params.name);
+
+  const { data: reddits, isLoading } = useQuery({
+    queryKey: ['listings', params.name],
+    queryFn: () => fetchData(params.name),
+    refetchOnWindowFocus: false,
+  });
+
+  console.log(reddits?.flat());
 
   useEffect(() => {
     if (params.name === defaultSubReddit) {
@@ -25,6 +44,11 @@ const Search = () => {
           <S.Button>Search</S.Button>
         </Link>
       </S.Form>
+      {isLoading ? (
+        <S.Loader cssOverride={override} color="#FDB755" size="5em" />
+      ) : (
+        'hi'
+      )}
     </S.Container>
   );
 };
