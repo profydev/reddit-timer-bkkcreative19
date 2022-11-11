@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
-
 import { defaultSubReddit } from '../../shared/constants';
 import { fetchData } from '../../shared/apiCall';
 import * as S from './Search.style';
@@ -20,11 +19,14 @@ const Search = () => {
 
   const [value, setValue] = useState(params.name);
 
-  const { isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['listings', params.name],
     queryFn: () => fetchData(params.name),
     refetchOnWindowFocus: false,
   });
+
+  console.log(data?.flat());
+  console.log(new Date());
 
   useEffect(() => {
     if (params.name === defaultSubReddit) {
@@ -36,7 +38,7 @@ const Search = () => {
     <S.Container>
       <S.Title>Find the best time for a subreddit</S.Title>
       <S.Form>
-        <span>r /</span>
+        <span>r</span>
         <S.Input value={value} onChange={(e) => setValue(e.target.value)} />
         <Link to={`/search/${value}`}>
           <S.Button>Search</S.Button>

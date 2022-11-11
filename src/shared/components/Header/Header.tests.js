@@ -46,7 +46,7 @@ test('navigates to search page when search link is clicked', () => {
   userEvent.click(searchLink);
 
   expect(
-    screen.getByText(/Find the best time for a subreddit/i),
+    screen.findByText(/Find the best time for a subreddit/i),
   ).toBeInTheDocument();
   expect(router.state.location.pathname).toEqual('/search/javascript');
 });
