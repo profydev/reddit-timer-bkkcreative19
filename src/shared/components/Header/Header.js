@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+import { defaultSubReddit } from '../../constants';
 import * as S from './Header.style';
 
 function Header() {
