@@ -22,6 +22,7 @@ const Search = () => {
   const { isLoading } = useQuery({
     queryKey: ['listings', params.name],
     queryFn: () => fetchData(params.name),
+
     refetchOnWindowFocus: false,
   });
 

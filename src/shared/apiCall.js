@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable import/prefer-default-export */
@@ -18,11 +20,50 @@ export const fetchData = async (subReddit) => {
     i++;
   } while (i < 5);
 
-  // const res = await fetch(
-  //   `https://www.reddit.com/r/${subReddit}/top.json?t=year&limit=100`,
-  // );
-  // const data = await res.json();
+  const obj = {
+    Sunday: [],
+    Monday: [],
+    Tuesday: [],
+    Wednesday: [],
+    Thursday: [],
+    Friday: [],
+    Saturday: [],
+  };
 
+  const yay = dataa.flat();
+
+  yay.forEach((item) => {
+    const date = new Date(item.data.created * 1000);
+
+    switch (date.getDay()) {
+      case 0:
+        obj.Sunday.push(item);
+        break;
+      case 1:
+        obj.Monday.push(item);
+        break;
+      case 2:
+        obj.Tuesday.push(item);
+        break;
+      case 3:
+        obj.Wednesday.push(item);
+        break;
+      case 4:
+        obj.Thursday.push(item);
+        break;
+      case 5:
+        obj.Friday.push(item);
+        break;
+      case 6:
+        obj.Saturday.push(item);
+        break;
+      default:
+    }
+    // console.log(date);
+    // console.log(date.getDay());
+  });
+
+  console.log(obj);
   return dataa;
 };
 
