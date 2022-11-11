@@ -35,7 +35,7 @@ test('navigates to home page when logo is clicked', () => {
 
   expect(
     // eslint-disable-next-line comma-dangle
-    screen.getByText(/No reactions to your reddit posts/i)
+    screen.getByText(/No reactions to your reddit posts/i),
   ).toBeInTheDocument();
 });
 
@@ -46,7 +46,7 @@ test('navigates to search page when search link is clicked', () => {
   userEvent.click(searchLink);
 
   expect(
-    screen.getByText(/Find the best time for a subreddit/i)
+    screen.getByText(/Find the best time for a subreddit/i),
   ).toBeInTheDocument();
   expect(router.state.location.pathname).toEqual('/search/javascript');
 });
@@ -63,7 +63,9 @@ test.each`
     const hashLink = screen.getByRole('link', { name: link });
     userEvent.click(hashLink);
 
-    expect(screen.getByText(/We find the 500/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/No reactions to your reddit posts/i),
+    ).toBeInTheDocument();
     expect(router.state.location.hash).toEqual(hash);
-  }
+  },
 );
