@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link as UnstyledLink } from 'react-router-dom';
+import { HashLink as UnstyledHashLink } from 'react-router-hash-link';
 import { ReactComponent as UnstyledLogo } from './logo.svg';
 
 export const Container = styled.header`
@@ -12,11 +13,18 @@ export const Container = styled.header`
   justify-content: space-between;
 `;
 
-export const Link = styled(UnstyledLink)`
+const LinkStyles = css`
   margin-left: 26px;
   text-decoration: none;
   color: ${(props) => props.theme.color.midDark};
   font-size: 1.6rem;
+`;
+
+export const Link = styled(UnstyledLink)`
+  ${LinkStyles}
+`;
+export const Hash = styled(UnstyledHashLink)`
+  ${LinkStyles}
 `;
 
 export const Logo = styled(UnstyledLogo)`
