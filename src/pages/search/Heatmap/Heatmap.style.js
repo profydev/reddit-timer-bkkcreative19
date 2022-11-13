@@ -77,3 +77,16 @@ export const Right = styled.div`
   width: 960px;
   background: green;
 `;
+
+export const TimeZone = styled.p`
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 17px;
+  text-align: center;
+  margin-top: 1.2rem;
+  color: #93918f;
+
+  & span {
+    font-weight: 700;
+  }
+`;

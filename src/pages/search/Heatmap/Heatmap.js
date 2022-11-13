@@ -25,7 +25,7 @@ const times = [
   '10:00pm',
 ];
 
-const Heatmap = ({ data }) => {
+const Heatmap = ({ data, setCurrent, current }) => {
   const navigate = useNavigate();
   const days = [
     'Sunday',
@@ -66,6 +66,8 @@ const Heatmap = ({ data }) => {
               {Object.entries(yay[day]).map((item, id) => (
                 <S.DayPost
                   onClick={() => {
+                    setCurrent(item[1][0]);
+                    // console.log(item[1][0]);
                     navigate(`${item[1][1]}`);
                   }}
                   key={id}
@@ -77,6 +79,10 @@ const Heatmap = ({ data }) => {
           </S.Day>
         ))}
       </S.Main>
+      <S.TimeZone>
+        All times are shown in your timezone:{' '}
+        <span>{Intl.DateTimeFormat().resolvedOptions().timeZone}</span>
+      </S.TimeZone>
     </S.Container>
   );
 };
