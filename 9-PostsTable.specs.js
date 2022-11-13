@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import describeOnBranches from '../utils/describeOnBranches';
+import describeOnBranches from './cypress/utils/describeOnBranches';
 
 describeOnBranches('posts-table')('Posts Table', () => {
   before(() => {
