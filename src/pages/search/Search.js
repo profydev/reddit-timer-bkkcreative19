@@ -1,13 +1,20 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
 import { defaultSubReddit } from '../../shared/constants';
 import { fetchData } from '../../shared/apiCall';
 import * as S from './Search.style';
+import Heatmap from './Heatmap/Heatmap';
+
+import Table from './Table';
 
 const Search = () => {
   const params = useParams();
+  const [current, setCurrent] = useState(null);
   // const navigate = useNavigate();
+
+  // console.log(typeof current[0].data.author);
 
   const override = {
     color: '#FDB755',
@@ -19,14 +26,11 @@ const Search = () => {
 
   const [value, setValue] = useState(params.name);
 
-  const { isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['listings', params.name],
     queryFn: () => fetchData(params.name),
     refetchOnWindowFocus: false,
   });
-
-  // console.log(data?.flat());
-  // console.log(new Date());
 
   useEffect(() => {
     if (params.name === defaultSubReddit) {
@@ -40,15 +44,16 @@ const Search = () => {
       <S.Form>
         <span>r</span>
         <S.Input value={value} onChange={(e) => setValue(e.target.value)} />
-        <Link to={`/search/${value}`}>
+        <Link onClick={() => setCurrent(null)} to={`/search/${value}`}>
           <S.Button>Search</S.Button>
         </Link>
       </S.Form>
       {isLoading ? (
         <S.Loader cssOverride={override} color="#FDB755" size="5em" />
       ) : (
-        'hi'
+        <Heatmap current={current} setCurrent={setCurrent} data={data} />
       )}
+      {current?.length > 0 && !isLoading && <Table current={current} />}
     </S.Container>
   );
 };

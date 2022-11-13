@@ -25,7 +25,13 @@ import Search from '../pages/search';
 const RouteHandler = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/search/:name" element={<Search />} />
+    <Route path="/search">
+      <Route index element={<Search />} />
+      <Route path=":name" element={<Search />}>
+        <Route path=":num" element={<Search />} />
+      </Route>
+    </Route>
+    {/* <Route path="/search/:name/:num?" element={<Search />} /> */}
   </Routes>
 );
 
